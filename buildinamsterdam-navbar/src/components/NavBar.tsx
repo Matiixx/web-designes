@@ -41,6 +41,7 @@ export default function NavBar({ isOpened }: { isOpened: boolean }) {
     <nav
       className={isOpened === true ? "opened" : "closed"}
       onMouseMove={handleMouseMove}
+      onMouseLeave={() => setTranslate(0)}
     >
       <div
         className="navbar-wrapper"
