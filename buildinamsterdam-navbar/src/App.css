@@ -1,0 +1,81 @@
+main {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1667391557492-22031ee7d573");
+  background-size: cover;
+  background-position: center 100%;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+main.navbar-opened {
+  transform: translateY(-50%);
+}
+
+#nav-toggle {
+  position: fixed;
+  height: 5rem;
+  width: 5rem;
+  background-color: orange;
+  border-radius: 5rem;
+  border: none;
+  z-index: 3;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  box-shadow: 0px 0px 4rem black;
+  transition: transform, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+}
+
+#nav-toggle:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+#nav-toggle:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+nav {
+  height: 50vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.navbar-wrapper {
+  will-change: transform;
+  display: flex;
+  flex-direction: row;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-top: clamp(1rem, 2vw, 3rem);
+  padding: 0 clamp(1rem, 2vw, 2rem);
+  transform: translateY(70%) scale(0.9);
+  transition: transform 0.5s ease-in-out;
+}
+
+nav.opened .navbar-wrapper {
+  transform: translateY(0) scale(1);
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link h3 {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-link img {
+  width: max(20vw, 400px);
+  aspect-ratio: 1.8 / 1;
+  object-fit: cover;
+}
