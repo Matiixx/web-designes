@@ -12,10 +12,9 @@ export const NavBarLink: React.FC<NavBarLinkProps> = ({
   return (
     <a className="nav-link">
       <h3>{text}</h3>
-      <div
-        className="image-container"
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      ></div>
+      <div className="image-container">
+        <img src={imageUrl} />
+      </div>
     </a>
   );
 };
