@@ -13,7 +13,9 @@ export const NavBarLink: React.FC<NavBarLinkProps> = ({
     <a className="nav-link">
       <h3>{text}</h3>
       <div className="image-container">
-        <img src={imageUrl} />
+        <div className="background-scaling-container">
+          <img src={imageUrl} />
+        </div>
       </div>
     </a>
   );
