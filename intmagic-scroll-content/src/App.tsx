@@ -9,13 +9,16 @@ function App() {
   const items = [
     "https://images.unsplash.com/photo-1667286170985-3e18ee349b97",
     "https://images.unsplash.com/photo-1667615983516-5e724e6fc348",
-    "https://images.unsplash.com/photo-1667615983516-5e724e6fc348",
+    "https://images.unsplash.com/photo-1667530269833-34e6823185d0",
   ];
 
   return (
     <div className="App">
       <Item title="Title 1" mainItem={mainItem} items={items} />
       <Item title="Title 2" mainItem={mainItem} items={items} />
+      <Item title="Title 3" mainItem={mainItem} items={items} />
+      <Item title="Title 4" mainItem={mainItem} items={items} />
+      <Item title="Title 5" mainItem={mainItem} items={items} />
     </div>
   );
 }
