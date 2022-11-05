@@ -12,7 +12,7 @@ const ITEM_WIDTH = 5;
 
 export const Item: React.FC<ItemProps> = ({ title, mainItem, items }) => {
   let lastGridRow = 0;
-  const calcGridArea = (index: number) => {
+  const calcGridArea = (index: number): string => {
     lastGridRow = (index + 1) * 30 + ITEM_HEIGHT;
     const colStart = index % 2 === 0 ? 3 : 18;
     return (
