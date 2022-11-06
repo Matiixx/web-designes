@@ -16,16 +16,18 @@ export const Footer = () => {
 
   const handleScrollFooter = (event: Event) => {
     if (footerRef.current && footerBackgroundRef.current) {
-      const newRadius = scale(
-        footerRef.current.getBoundingClientRect().top < window.innerHeight &&
-          footerRef.current.getBoundingClientRect().top >= 0
-          ? footerRef.current.getBoundingClientRect().top
-          : 0,
-        window.innerHeight * 0.1,
-        window.innerHeight * 0.9,
-        0,
-        50
-      );
+      let newRadius = 50;
+      if (footerRef.current.getBoundingClientRect().top <= 0) newRadius = 0;
+      else
+        newRadius = scale(
+          footerRef.current.getBoundingClientRect().top < window.innerHeight 
+            ? footerRef.current.getBoundingClientRect().top
+            : 0,
+          window.innerHeight * 0.1,
+          window.innerHeight * 0.9,
+          0,
+          50
+        );
       footerBackgroundRef.current.style.borderRadius = `${newRadius}% ${newRadius}% 0 0`;
     }
   };
